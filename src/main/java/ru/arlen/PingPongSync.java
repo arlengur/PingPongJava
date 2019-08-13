@@ -2,6 +2,9 @@ package ru.arlen;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static ru.arlen.Utils.await;
+import static ru.arlen.Utils.sleep;
+
 public class PingPongSync {
     private String last = "pong";
     private final AtomicInteger counter = new AtomicInteger(1_000_000);
@@ -18,7 +21,7 @@ public class PingPongSync {
     public synchronized void action(String msg) {
         while (counter.get() > 0) {
             if (msg.equals(last)) {
-                wait(this);
+                await(this);
             } else {
                 System.out.println(msg);
                 counter.decrementAndGet();
@@ -26,22 +29,6 @@ public class PingPongSync {
                 sleep();
                 notify();
             }
-        }
-    }
-
-    public static void wait(Object obj) {
-        try {
-            obj.wait();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void sleep() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

@@ -2,6 +2,8 @@ package ru.arlen;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static ru.arlen.Utils.sleep;
+
 public class PingPongAtomic {
     private static final String MSGS[] = {"ping", "pong"};
     private final AtomicInteger lastIdx = new AtomicInteger(1);
@@ -23,14 +25,6 @@ public class PingPongAtomic {
                 counter.decrementAndGet();
                 sleep();
             }
-        }
-    }
-
-    public static void sleep() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }

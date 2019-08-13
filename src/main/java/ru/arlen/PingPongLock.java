@@ -4,6 +4,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static ru.arlen.Utils.await;
+import static ru.arlen.Utils.sleep;
+
 public class PingPongLock {
     private String last = "pong";
     private final AtomicInteger counter = new AtomicInteger(1_000_000);
@@ -38,20 +41,4 @@ public class PingPongLock {
 
         }
     }
-
-    public static void await(Condition condition) {
-        try {
-            condition.await();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
-
-        public static void sleep() {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
 }

@@ -4,6 +4,8 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
+import static ru.arlen.Utils.sleep;
+
 public class PingPongPark {
     private AtomicReference<String> last = new AtomicReference<>("pong");
     private AtomicReference<Thread> parkedThread = new AtomicReference<>();
@@ -37,14 +39,6 @@ public class PingPongPark {
                 if (parkedThread.get() != null)
                     LockSupport.unpark(parkedThread.get());
             }
-        }
-    }
-
-    public static void sleep() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
