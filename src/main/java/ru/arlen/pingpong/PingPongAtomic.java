@@ -1,8 +1,8 @@
-package ru.arlen;
+package ru.arlen.pingpong;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-import static ru.arlen.Utils.sleep;
+import static ru.arlen.pingpong.Utils.sleep;
 
 public class PingPongAtomic {
     private static final String MSGS[] = {"ping", "pong"};

@@ -1,4 +1,4 @@
-package ru.arlen;
+package ru.arlen.pingpong;
 
 import java.util.concurrent.locks.Condition;
 

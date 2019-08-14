@@ -1,10 +1,10 @@
-package ru.arlen;
+package ru.arlen.pingpong;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.concurrent.locks.LockSupport;
 
-import static ru.arlen.Utils.sleep;
+import static ru.arlen.pingpong.Utils.sleep;
 
 public class PingPongPark {
     private AtomicReference<String> last = new AtomicReference<>("pong");

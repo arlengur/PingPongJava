@@ -1,11 +1,11 @@
-package ru.arlen;
+package ru.arlen.pingpong;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static ru.arlen.Utils.await;
-import static ru.arlen.Utils.sleep;
+import static ru.arlen.pingpong.Utils.await;
+import static ru.arlen.pingpong.Utils.sleep;
 
 public class PingPongLock {
     private String last = "pong";

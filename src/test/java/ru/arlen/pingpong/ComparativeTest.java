@@ -1,4 +1,4 @@
-package ru.arlen;
+package ru.arlen.pingpong;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
